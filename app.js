@@ -22,7 +22,7 @@ app.get("/", function (request, response) {
         const {description, id} = data.weather[0];
         const {temp, feels_like, humidity} = data.main;
         let result = {}
-        if(id == 800){
+        if(id == 800){{
             result["wIcon"] = "../images/icons/clear.svg";
         }else if(id >= 200 && id <= 232){
             result["wIcon"] = "../images/icons/storm.svg";  
@@ -34,7 +34,7 @@ app.get("/", function (request, response) {
             result["wIcon"] = "../images/icons/cloud.svg";
         }else if((id >= 500 && id <= 531) || (id >= 300 && id <= 321)){
             result["wIcon"] = "../images/icons/rain.svg";
-        }
+        }}
         
         result["temp"] = Math.floor(temp);
         result["description"]  = description;
