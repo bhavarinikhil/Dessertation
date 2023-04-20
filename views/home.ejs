@@ -10,16 +10,19 @@
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
+    
     <div class="wrapper">
       
       <header>Weather Cloth Suggesstion Application</header>
-      
+     
       <section class="input-part">
         <p class="info-txt"></p>
         <div class="content">
-          <input type="text" spellcheck="false" placeholder="Enter city name" required>
+          <form action="/" method="get">
+          <input type="text" name="cityName" id="cityName" spellcheck="false" placeholder="Enter city name">
+        </form>
           <div class="separator"></div>
-          <button>Get Device Location</button>
+          <button>Auto Fill current location</button>
         </div>
       </section>
       <section class="weather-part">
@@ -54,11 +57,12 @@
         </div>
       </section>
       </div>
-      
+      <input type="hidden" name="latitude" id="latitude">
+      <input type="hidden" name="longitude" id="longitude">
    
   </div>
     
     <script src="../js/script.js"></script>
-
+ 
   </body>
 </html>
