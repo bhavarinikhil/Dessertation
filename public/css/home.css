@@ -137,19 +137,10 @@ header i {
 }
 
 .wrapper .weather-part {
-  display: contents;
-  float: right;
-  width: 50%;
-  padding: 10px;
-  height: 300px;
-  margin: 30px 0 0;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  
 }
 
 .wrapper.active .weather-part {
-  display: contents;
 }
 
 .weather-part img {
@@ -174,15 +165,15 @@ header i {
 
 .weather-part .weather {
   font-size: 21px;
-  text-align: center;
-  margin: -5px 20px 15px;
+  /* text-align: center;
+  margin: -5px 20px 15px; */
 }
 
 .weather-part .location {
   display: flex;
   font-size: 19px;
-  padding: 0 20px;
-  text-align: center;
+  /* padding: 0 20px;
+  text-align: center; */
   margin-bottom: 30px;
   align-items: flex-start;
 }
@@ -194,7 +185,7 @@ header i {
 
 .weather-part .bottom-details {
   display: flex;
-  width: 50%;
+  width: 100%;
   justify-content: space-between;
   border-top: 1px solid #ccc;
   float: right;
@@ -240,6 +231,67 @@ header i {
   margin-top: -6px;
 }
 
+.image-part{
+  display: contents;
+  float: left;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+  margin: 30px 0 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.recommendation-part {
+  display: contents;
+  float: right;
+  width: 50%;
+  padding: 10px;
+  height: 300px;
+  margin: 30px 0 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 .humidity i {
   font-size: 37px;
+}
+
+
+/* ########new css#### */
+
+.col-main {
+  flex: 1;  
+}  
+
+.col-complementary {
+  flex: 1;  
+}
+
+/* Responsive: */
+
+@media only screen and (min-width: 640px) {
+  .layout {
+    display: flex;
+  }
+}
+
+/* etc */
+
+body {
+  margin: 1.5em;
+}
+
+.container {
+  max-width: 60em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.col {
+  padding: 1em;
+  margin: 0 2px 2px 0;
+ 
 }

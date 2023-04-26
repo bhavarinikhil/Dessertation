@@ -59,6 +59,13 @@ app.listen(3000, function (request, response) {
 function weatherByCityName(response, cityName) {
     urlByCity = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&units=metric&appid=" + API_KEY;
     urlByLatLong = "https://api.openweathermap.org/data/2.5/weather?lat=&lon=&units=metric&appid=" + API_KEY;
+    dress ={}
+    dress["clear"] = "T-Shirt, Pant, Shirt, Cotton pants"
+    dress["storm"]="sleveless jacket, jean"
+    dress["snow"]="Winter-Jacket, Jean, Shoes"
+    dress["haze"]="Sleveless tshirt, shorts, cotton pants"
+    dress["cloud"]="Rain-coat, Jean"
+    dress["rain"]="Rain-coat, Jean, Shirt, Jacket"
     axios.get(urlByCity)
         .then(res => {
             const data = res.data;
@@ -67,18 +74,25 @@ function weatherByCityName(response, cityName) {
             const { description, id } = data.weather[0];
             const { temp, feels_like, humidity } = data.main;
             let result = {};
+            let key =  "clear";
             if (id == 800) {
                 result["wIcon"] = "../images/icons/clear.svg";
+                key =  "clear"
             } else if (id >= 200 && id <= 232) {
                 result["wIcon"] = "../images/icons/storm.svg";
+                key =  "storm"
             } else if (id >= 600 && id <= 622) {
                 result["wIcon"] = "../images/icons/snow.svg";
+                key =  "snow"
             } else if (id >= 701 && id <= 781) {
                 result["wIcon"] = "../images/icons/haze.svg";
+                key =  "haze"
             } else if (id >= 801 && id <= 804) {
                 result["wIcon"] = "../images/icons/cloud.svg";
+                key =  "cloud"
             } else if ((id >= 500 && id <= 531) || (id >= 300 && id <= 321)) {
                 result["wIcon"] = "../images/icons/rain.svg";
+                key =  "rain"
             }
 
             result["temp"] = Math.floor(temp);
@@ -86,7 +100,7 @@ function weatherByCityName(response, cityName) {
             result["location"] = `${city}, ${country}`;
             result["feels_like"] = Math.floor(feels_like);
             result["humidity"] = `${humidity}%`;
-
+            result["recommendation"] = dress[key];
             response.render('home', { response: result });
         })
         .catch(err => {
