@@ -22,7 +22,7 @@ body {
 }
 
 .wrapper {
-  width: 1200px;
+  width: 70%;
   background: #fff;
   border-radius: 7px;
   box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
@@ -96,6 +96,7 @@ header i {
   text-align: center;
   padding: 0 15px;
   border: 1px solid #ccc;
+  margin: 4px;
 }
 
 .input-part input:is(:focus, :valid) {

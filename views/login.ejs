@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Cloth Suggesstion Application</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+
+    <!-- Linking BoxIcon for Icon -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    
+  </head>
+  <body>
+    
+    <div class="wrapper">
+      
+      <header>Login to Weather Application</header>
+      <div class="container">
+  
+        <div class="layout">
+          <div class="col col-main input-part">
+            <p class="info-txt">If you're a existing User Log in</p>
+            <p><%= loginMessage %></p>
+            <div class="content">
+              <form action="/login" method="post">
+              <input type="text" name="userId" id="userId" spellcheck="false" placeholder="Enter User Id" required>
+              <input type="password" name="password" id="password" spellcheck="false" placeholder="Enter password" required>
+           
+              <button>Login</button>
+             
+            </form>
+            </div>
+          </div>
+          <div class="separator"></div>
+             
+          <div class="col col-complementary weather-part input-part" role="complementary">
+            <p class="info-txt">If you're a new User Sign up</p>
+            <p><%= signupmessage %></p>
+            <div class="content">
+              <form action="/signup" method="post">
+              <input type="text" name="userId" id="userId" spellcheck="false" placeholder="Enter User Id" required>
+              <input type="text" name="userName" id="userName" spellcheck="false" placeholder="Enter User Name" required>
+              <input type="password" name="password" id="password" spellcheck="false" placeholder="Enter password" required>
+           
+              <button>Signup</button>
+              
+            </form>
+            </div>
+           </div>
+  </div>
+    
+    <script src="../js/script.js"></script>
+ 
+  </body>
+</html>

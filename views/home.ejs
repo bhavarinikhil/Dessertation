@@ -6,19 +6,26 @@
     <title>Weather Cloth Suggesstion Application</title>
     <link rel="stylesheet" href="../css/home.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <!-- Linking BoxIcon for Icon -->
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="service-worker.js"></script>
+    <script src="../js/service-client.js"></script>
   </head>
   <body>
     
     <div class="wrapper">
       
-      <header>Weather Cloth Suggesstion Application</header>
+      <header>Weather Cloth Suggesstion Application
+        <span style="position: absolute; left: 20%;"><a href="/home">Home</a></span>
+        <span style="position: absolute; right: 20%;"><a href="/logout">logout</a></span>
+      </header>
       <div class="container">
   
         <div class="layout">
           <div class="col col-main input-part">
-            <p class="info-txt"></p>
             <div class="content">
               <form action="/" method="get">
               <input type="text" name="cityName" id="cityName" spellcheck="false" placeholder="Enter city name">
@@ -67,11 +74,20 @@
             </div>  
           </div>
         </div>
-        <div class="col col-complementary">
-          <span class="recommendation-part">Recommended Cloth for the weather</span>
+        <div class="col col-complementary  input-part">
+          <span class="recommendation-part"><b>Recommended Cloth for the weather</b></span>
           <div>
             <span><%= response["recommendation"]%></span>
           </div>
+          
+          <% if (userId!=undefined) { %>
+            <div>---------------------------</div>
+           <b> You want to customize recommendation of cloths. Click Below Button !</b>
+            <form method="get" action="/personalize">
+              <div><button>Personalize</button></div>
+            </form>
+            
+            <% } %>
         </div>
         </div>   
       

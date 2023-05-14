@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather Cloth Suggesstion Application</title>
+    <link rel="stylesheet" href="../css/home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <!-- Linking BoxIcon for Icon -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+   
+  </head>
+  <body>
+    
+    <div class="wrapper" style="top:28px;height:150%;position: absolute;">
+      
+      <header>Personalize Weather Application 
+        <span style="position: absolute; left: 30px;"><a href="/home">Home</a></span>
+        <span style="position: absolute; right: 30px;"><a href="/logout">logout</a></span>
+      </header>
+      <div class="container">
+  
+        <div class="layout">
+          <div class="col col-main input-part">
+            <p><%= message %></p>
+            <div class="content">
+              <form action="/personalize" method="post">
+                <div>
+                <span>
+                  <label>clear</label>
+                </span>
+                <span>
+                  <input type="text" name="clear" id="clear" spellcheck="false" placeholder="" value="<%= recommendation['clear'] %>" required>
+                </span>
+              </div>
+
+              <div>
+                <span>
+                  <label>storm</label>
+                </span>
+                <span>
+                  <input type="text" name="storm" id="storm" spellcheck="false" placeholder="" value="<%= recommendation['storm'] %>" required>
+                </span>
+              </div>
+
+              <div>
+                <span>
+                  <label>haze</label>
+                </span>
+                <span>
+                  <input type="text" name="haze" id="haze" spellcheck="false" placeholder="" value="<%= recommendation['haze'] %>" required>
+                </span>
+              </div>
+
+              <div>
+                <span>
+                  <label>cloud</label>
+                </span>
+                <span>
+                  <input type="text" name="cloud" id="cloud" spellcheck="false" placeholder="" value="<%= recommendation['cloud'] %>" required>
+                </span>
+              </div>
+
+              <div>
+                <span>
+                  <label>rain</label>
+                </span>
+                <span>
+                  <input type="rain" name="rain" id="rain" spellcheck="false" placeholder="" value="<%= recommendation['rain'] %>" required>
+                </span>
+              </div>
+
+
+              <div>
+                <span>
+                  <label>snow</label>
+                </span>
+                <span>
+                  <input type="text" name="snow" id="snow" spellcheck="false" placeholder="" value="<%= recommendation['snow'] %>" required>
+                </span>
+              </div>
+            
+              <div>
+                <span>Push notification Frequency in seconds</span>
+                <span>
+                  <input type="number" name="frequency" id="frequency" spellcheck="false" placeholder="" value="<%= recommendation['frequency'] %>" required>
+                </span>
+              </div>
+              <button>Submit</button>
+             
+            </form>
+            </div>
+          </div>
+          <div class="separator"></div>
+             
+          
+  </div>
+    
+    <script src="../js/script.js"></script>
+ 
+  </body>
+</html>
